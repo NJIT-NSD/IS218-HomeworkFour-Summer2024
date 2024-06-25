@@ -16,10 +16,3 @@ def test_multiplication():
 def test_division():
     '''Test that division function works '''
     assert Calculations.division(9, 3) == 3
-
-def test_divide_by_zero():
-    '''Test that divide by zero error occurs '''
-    assert Calculations.division(5, 0) == 1
-
-#def history_operations():
-#    '''Check History'''

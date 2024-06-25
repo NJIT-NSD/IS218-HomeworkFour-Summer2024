@@ -1,5 +1,4 @@
 from decimal import Decimal
-from typing import Callable
 
 class Calculations:
     history = []
@@ -21,7 +20,7 @@ class Calculations:
         return a * b
     
     @staticmethod
-    def divide(a: Decimal, b: Decimal) -> Decimal:
+    def division(a: Decimal, b: Decimal) -> Decimal:
         if b != 0:
             return a / b
         else:
@@ -30,14 +29,6 @@ class Calculations:
 class History:
     
     historyOfCalculations = []
-
-    #@classmethod
-    #def add_history(cls, calculation):
-    #    cls.history.append(calculation)
-
-    #@classmethod
-    #def get_history(cls):
-    #    return cls.history
 
     @classmethod
     def record(historyOfCalculations, args):
@@ -50,17 +41,3 @@ class History:
         else:
             for item in historyOfCalculations:
                 print(item)   
-
-class Calculation:
-    
-    def __init__(self, a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]):
-        self.a = a
-        self.b = b
-        self.operation = operation
-    
-    @staticmethod    
-    def create(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]):
-        return Calculation(a, b, operation)
-
-    def perform(self) -> Decimal:
-        return self.operation(self.a, self.b)
